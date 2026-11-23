@@ -7,7 +7,7 @@ scene.add(camera) /// eta ke scene e add korte hbe
 
 
 
-const box = new THREE.BoxGeometry(2,2,2 ); 
+const box = new THREE.BoxGeometry(2,2,2); 
 
 const material=new THREE.MeshBasicMaterial({color:'red'}); ///material mane hocche color 
 
@@ -33,10 +33,12 @@ window.addEventListener('resize',()=>{
 
 })
 
-function animate(){
-    window.requestAnimationFrame(animate);   //// 1 bar call hole eta bar bar colbe 
+function animate(time){
+    window.requestAnimationFrame(animate);   //// 1 bar call hole eta bar bar colbe  
+    mesh.rotation.x = time / 2000;
+    mesh.rotation.y = time / 1000;
     renderer.render(scene,camera);
 
 }
-animate(); ///eta 1 bar call korbe animate ke 
+animate(100); ///eta 1 bar call korbe animate ke  
 
